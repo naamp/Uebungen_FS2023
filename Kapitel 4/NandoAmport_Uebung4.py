@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
 
 class MyWindow(QMainWindow):
     def __init__(self):
@@ -19,6 +20,7 @@ class MyWindow(QMainWindow):
         self.plz = QLineEdit()
         self.ort = QLineEdit()
         self.land = QComboBox()
+        self.land.addItems(["Schweiz", "Deutschland", "Österreich"])
         self.button1 = QPushButton("save")
 
         # Widgets dem Layout hinzufügen:------------------------------------------------------------------------------
@@ -42,7 +44,7 @@ class MyWindow(QMainWindow):
         filemenu.addAction(self.save)
         filemenu.addAction(self.quit)
 
-        self.land.addItems(["Schweiz", "Deutschland", "Österreich"])
+        
 
         # Aktionen:--------------------------------------------------------------------------------------------------
         self.button1.clicked.connect(self.Datensicherung)
